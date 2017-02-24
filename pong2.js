@@ -35,7 +35,7 @@ function keyDownHandler(e) {
         downPressed = true;
     }
 }
-
+ 
 function keyUpHandler(e) {
     if(e.keyCode === 38) {
         upPressed = false;
