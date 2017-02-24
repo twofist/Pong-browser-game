@@ -1,20 +1,3 @@
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>testing</title>
-    <style>
-		* { padding: 0; margin: 0; }
-    	canvas {
-		background-image: url("http://i.imgur.com/n30VXI8.png");
-		display: block;
-		margin: 0 auto;
-		}
-    </style>
-</head>
-<body>
-<canvas id="canvas"></canvas>
-
-<script>
 var canvas = document.getElementById("canvas");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -77,6 +60,7 @@ function drawPaddle() {
     ctx.fill();
     ctx.closePath();
 }
+
 function AIpaddle() {
 	ctx.beginPath();
 	ctx.rect(aix, aiy, paddleWidth, paddleHeight);
@@ -209,8 +193,3 @@ function draw() {
 }
 
 draw();
-	
-</script>
-
-</body>
-</html>
