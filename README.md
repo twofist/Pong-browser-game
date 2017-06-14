@@ -2,11 +2,11 @@
 Ping Pong browser game
 
 single player 1 paddle pong game
-http://twofist.info/index2.html
+http://www.twofist.info/pong1.html
 
 
 single player 2 paddle pong game
-http://twofist.info/index3.html
+http://www.twofist.info/pong2.html
 
 
 
