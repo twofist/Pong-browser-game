@@ -14,7 +14,13 @@
 <body>
 <canvas id="canvas"></canvas>
 
-<script type="text/javascript" src="pong2.js"></script>
+<script>
+var a=document.getElementById("canvas");a.width=window.innerWidth;a.height=window.innerHeight;var b=a.getContext("2d"),c=10,d=Math.floor(Math.random()*a.width/2)+a.width/2/2,e=Math.floor(Math.random()*a.height/2)+a.height/2/2,f=5,g=-5,h=75,k=10,m=(a.height-h)/2,n=!1,p=!1,q=0,r=3,t=3,u,v,w=a.width-30,x=m,y=1,z=1;document.addEventListener("keydown",A,!1);document.addEventListener("keyup",B,!1);function A(l){38===l.keyCode?n=!0:40===l.keyCode&&(p=!0)}
+function B(l){38===l.keyCode?n=!1:40===l.keyCode&&(p=!1)}function C(){0>f&&(f=-f);d=Math.floor(Math.random()*a.width/2)+a.width/2/2;e=Math.floor(Math.random()*a.height/2)+a.height/2/2;m=(a.height-h)/2;z=y=1}
+function D(){b.clearRect(0,0,a.width,a.height);b.beginPath();b.arc(d,e,c,0,2*Math.PI);b.fillStyle="#0095DD";b.fill();b.closePath();b.beginPath();b.rect(30,m,k,h);b.fillStyle="#0095DD";b.fill();b.closePath();b.beginPath();b.rect(w,x,k,h);b.fillStyle="#0095DD";b.fill();b.closePath();b.font="20px Arial";b.fillStyle="#0095DD";b.fillText("Score: "+q,a.width/2,20);b.font="20px Arial";b.fillStyle="#0095DD";var l=" Lives: "+r+" - "+t+" :Comp Lives";b.fillText(l,a.width/2-3*l.length,40);u?(delta=(Date.now()-
+u)/1E3,u=Date.now(),v=1/delta,b.font="20px Arial",b.fillStyle="#0095DD",b.fillText("  FPS: "+v.toFixed(0),40,20)):(u=Date.now(),v=0);d+f>a.width+c+c?(C(),alert("the computer lost a life"),t--,t||(alert("YOU WIN"),document.location.reload())):d-f<0-c-c&&(C(),alert("you lost a life"),r--,r||(alert("GAME OVER"),document.location.reload()));e>m&&e<m+h&&30+k>=d-c&&30-k<=d-c&&1===y&&(y=0,z=1,f=-f,f++,q++,c++,h++,k++);e>x&&e<x+h&&w<=d+c&&1===z&&(z=0,y=1,f=-f,f--,q++,c++,h++,k++);if(e+g>a.height-c||e+g<c)g=
+-g;n&&8<m?m-=10:p&&m<a.height-h-8&&(m+=10);0<f&&(e>x&&x<a.height-h-8&&(x+=10),e<x&&8<x&&(x-=10));0>f&&x>a.height/2+h/2?x-=10:0>f&&x<a.height/2-h/2&&(x+=10);d+=f;e+=g;requestAnimationFrame(D)}D();
+</script>
 
 </body>
 </html>
