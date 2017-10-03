@@ -14,7 +14,11 @@
 <body>
 <canvas id="canvas"></canvas>
 
-<script type="text/javascript" src="pong1.js"></script>
+<script>
+var a=document.getElementById("canvas");a.width=window.innerWidth;a.height=window.innerHeight;var b=a.getContext("2d"),c=10,d=a.width/2,e=a.height-30,f=5,g=-5,h=75,k=(a.height-h)/2,l=!1,n=!1,p=0,q=3,r,t;document.addEventListener("keydown",u,!1);document.addEventListener("keyup",v,!1);function u(m){38===m.keyCode?l=!0:40===m.keyCode&&(n=!0)}function v(m){38===m.keyCode?l=!1:40===m.keyCode&&(n=!1)}
+function w(){b.clearRect(0,0,a.width,a.height);b.beginPath();b.arc(d,e,c,0,2*Math.PI);b.fillStyle="#0095DD";b.fill();b.closePath();b.beginPath();b.rect(30,k,10,h);b.fillStyle="#0095DD";b.fill();b.closePath();b.font="20px Arial";b.fillStyle="#0095DD";b.fillText("Score: "+p,a.width/2,20);b.font="20px Arial";b.fillStyle="#0095DD";b.fillText(" Lives: "+q,a.width/2,40);r?(delta=(Date.now()-r)/1E3,r=Date.now(),t=1/delta,b.font="20px Arial",b.fillStyle="#0095DD",b.fillText("  FPS: "+t.toFixed(0),40,20)):
+(r=Date.now(),t=0);d+f>a.width-c?f=-f:d-f<c&&(q--,q?(0>f&&(f=-f),d=a.width/2,e=a.height-30,k=(a.height-h)/2,alert("you lost a life")):(alert("GAME OVER"),document.location.reload()));e>k&&e<k+h&&30>=d-c&&(f=-f,5<=p&&10>p?f+=2:10<=p?f+=4:f++,p++,c++,h++);if(e+g>a.height-c||e+g<c)g=-g;l&&8<k?k-=10:n&&k<a.height-h-8&&(k+=10);d+=f;e+=g;requestAnimationFrame(w)}w();
+</script>
 
 </body>
 </html>
